@@ -45,3 +45,61 @@ function findLongestWord(str) {
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
+
+
+Title Case a Sentence:
+
+function titleCase(str) {
+ str = str.toLowerCase().split(' ');
+
+  for(var i = 0; i < str.length; i++){
+    str[i] = str[i].split('');
+    str[i][0] = str[i][0].toUpperCase(); 
+    str[i] = str[i].join('');
+  }
+  return str.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+
+
+Repeate a String:
+
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  if (num > 0){
+  return str.repeat(num);
+} else {
+  return "";
+}
+}
+repeatStringNumTimes("abc", 3);
+
+
+Truncate a String:
+
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+ if (str.length > num && num > 3) {
+    return str.slice(0, (num - 3)) + '...';
+  } else if (str.length > num && num <= 3) {
+    return str.slice(0, num) + '...';
+  } else {
+    return str;
+  }
+
+}
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
+
+Confirm the Ending:
+
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  return str.substr(-target.length) === target;
+}
+
+confirmEnding("Bastian", "n");
+
