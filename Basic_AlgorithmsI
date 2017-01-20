@@ -63,7 +63,7 @@ function titleCase(str) {
 titleCase("I'm a little tea pot");
 
 
-Repeate a String:
+Repeat a String:
 
 function repeatStringNumTimes(str, num) {
   // repeat after me
@@ -102,4 +102,56 @@ function confirmEnding(str, target) {
 }
 
 confirmEnding("Bastian", "n");
+
+
+Chunky Monkey:
+
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  var newArr = [];
+  for (var n = 0; n < arr.length; n+=size) {
+    newArr.push(arr.slice(n, n+size));
+  }
+  return newArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
+Slasher Flick:
+
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
+  var arr2 = [];
+  for (var s = 0; s < arr.length; s += howMany) {
+    arr2 = arr.splice([howMany], arr.length);
+  }
+  return arr2;
+}
+
+slasher([1, 2, 3], 2);
+
+
+Mutations:
+
+function mutation(arr) {
+  for (var d = 0; d < arr[1].length; d++){
+    if (arr[0].toLowerCase().indexOf(arr[1][d].toLowerCase()) == -1)
+      return false;
+  }
+ 
+  return true;
+}
+mutation(["hello", "hey"]);
+
+
+Falsy Bouncer:
+
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  return arr.filter(Boolean);
+}
+
+bouncer([7, "ate", "", false, 9]);
+
 
