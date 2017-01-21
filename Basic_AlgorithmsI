@@ -155,3 +155,54 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9]);
 
 
+Seek and Destroy:
+
+function destroyer(arr) {
+  // Remove all the values
+  var argues = Array.prototype.slice.call(arguments);
+  argues.splice(0, 1);
+  return arr.filter(function(element) {
+    return argues.indexOf(element) === -1;
+  });
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+Where Do I Belong:
+
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  arr.sort(function(a, b) {
+  return a - b;
+  });
+}
+
+getIndexToIns([40, 60], 50);
+
+
+Caesers Cipher:
+
+
+function rot13(str) { // LBH QVQ VG!
+ var deciphered = [];
+    for (var i = 0; i < str.length; i++) {
+
+        if (str.charCodeAt(i) - 13 < 65) { if ((str.charCodeAt(i) >= 65) && (str.charCodeAt(i) <= 90)) {
+                deciphered.push(String.fromCharCode(90 + str.charCodeAt(i) - 65 - 12));
+            } else {
+                deciphered.push(String.fromCharCode(str.charCodeAt(i)));
+
+            }
+        } else {
+            deciphered.push(String.fromCharCode(str.charCodeAt(i) - 13));
+        }
+
+    }
+
+    return deciphered.join('');
+
+}
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
