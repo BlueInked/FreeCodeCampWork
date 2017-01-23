@@ -1,0 +1,16 @@
+Sum All Numbers in an Array:
+
+function sumAll(arr) {
+  var min = Math.min(arr[0], arr[1]);
+  var max = Math.max(arr[0], arr[1]);
+  var addUp = 0;
+  
+  for (n = min; n <= max; n++){
+    addUp +=n;
+  }
+  return addUp;
+}
+
+sumAll([1, 4]);
+
+
