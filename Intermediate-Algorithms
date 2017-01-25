@@ -27,3 +27,23 @@ return arr1.concat(arr2).filter //concat the two arrays
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 
+To Roman Numerals : 
+
+function convertToRoman(num) {
+  //arrays for Roman Numerals and Decimal Numbers. 
+  /*4, 9, 40, 90, 400, 900, and 4000 are included because how the numerals change with these numbers */
+ var decNum = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+ var romNum = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+ var toRom = "";
+  
+  //as i loops through until the number is at at the decimal number that it is  closest but not more than num.
+  for( var i = 0; i < decNum.length; i++) {
+    while (decNum[i] <= num) {
+      toRom += romNum[i];
+      num -= decNum[i];
+    }
+  }
+ return toRom;
+}
+
+convertToRoman(36);
