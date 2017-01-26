@@ -47,3 +47,29 @@ function convertToRoman(num) {
 }
 
 convertToRoman(36);
+
+
+Where Art Thou :
+
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  
+ var keys = Object.keys(source);
+  // remove those that do not have the keys from source.
+  arr = collection.filter(function(obj) {
+    //Use method every() to check for every key from source.
+    return keys.every(function(k) {
+      // Check if the object has the property and the same value.
+      return obj.hasOwnProperty(k) && obj[k] === source[k];
+    });
+  });
+  
+  // Only change code above this line
+  
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
