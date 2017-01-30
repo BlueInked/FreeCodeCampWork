@@ -101,3 +101,36 @@ function translatePigLatin(str) {
 translatePigLatin("consonant");
 
 
+DNA Pairs:
+
+
+function pairElement(str) {
+  var dnaPairs = [];
+   var search = function(dna) {
+    switch (dna) {
+      case "G":
+        dnaPairs.push(["G","C"]);
+        break;
+      case "C":
+        dnaPairs.push(["C","G"]);
+        break;
+      case "A":
+        dnaPairs.push(["A","T"]);
+        break; 
+      case "T":
+        dnaPairs.push(["T","A"]);
+        break;  
+    }
+};
+
+ for (var i = 0; i < str.length; i++) {
+    search(str[i]);
+  }
+
+  return dnaPairs;
+}
+
+pairElement("GCG");
+
+
+
