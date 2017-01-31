@@ -133,4 +133,23 @@ function pairElement(str) {
 pairElement("GCG");
 
 
+Missing Letters:
+
+
+function fearNotLetter(str) {
+  var letterPlace = str.split("").map(function(char, index) {
+    return str.charCodeAt(index);
+  });
+  
+  for (var i = 1; i < letterPlace.length; i++) {
+    if (letterPlace[i-1] !== letterPlace[i]-1) {
+      return String.fromCharCode(letterPlace[i]-1);
+    }
+  }
+
+  return undefined;
+}
+fearNotLetter("abce");
+
+
 
