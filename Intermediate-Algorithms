@@ -162,4 +162,23 @@ function booWho(bool) {
 booWho(false);
 
 
+Sorted Union:
+
+ function uniteUnique() {
+  var unitedArr = [];
+  var i = 0;
+  while (arguments[i]){
+    unitedArr = unitedArr.concat(arguments[i]); i++;
+  }
+  uniqueArray = unitedArr.filter(function(item, pos) {
+    return unitedArr.indexOf(item) == pos;
+  });
+  return uniqueArray;
+}
+
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+
 
