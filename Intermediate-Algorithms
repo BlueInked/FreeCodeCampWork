@@ -180,5 +180,37 @@ Sorted Union:
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 
+Converting to HTML entities:
+
+function convertHTML(str) {
+  // &colon;&rpar;
+  var piece = str.split(""); //piece because breaks the sentence to pieces
+  
+ for (var i = 0; i < piece.length; i++) {
+    switch (piece[i]) {
+      case '>':
+        piece[i] = '&gt;';
+        break;
+      case "'":
+        piece[i] = '&apos;';
+        break;
+      case '<':
+        piece[i] = '&lt;';
+        break;
+      case '"':
+        piece[i] = '&quot;';
+        break;
+      case '&':
+        piece[i] = "&amp;";
+        break;
+    }
+  }
+
+  piece = piece.join('');
+  return piece;
+}
+convertHTML("Dolce & Gabbana");
+
+
 
 
