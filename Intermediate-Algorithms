@@ -223,3 +223,23 @@ function spinalCase(str) {
 }
 
 spinalCase('This Is Spinal Tap');
+
+
+Sum Odd Fibonacci Numbers:
+
+function sumFibs(num) {
+    var prevNum = 0;
+    var currNum = 1;
+    var addedFibs = 0;
+    while (currNum <= num) {
+        if (currNum % 2 !== 0) {
+            addedFibs += currNum;
+        }
+
+        currNum += prevNum;
+        prevNum = currNum - prevNum;
+    }
+
+    return addedFibs;
+}
+sumFibs(4);
