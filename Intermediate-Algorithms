@@ -243,3 +243,41 @@ function sumFibs(num) {
     return addedFibs;
 }
 sumFibs(4);
+
+
+Sum All Prime Numbers:
+
+
+function sumPrimes(num) {
+  var result = 0;
+   //(https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+  //(http://stackoverflow.com/questions/11966520/how-to-find-prime-numbers-between-0-100)
+  //Find the Primes...the above were helpful
+  function getPrimes(max) {
+    var sieve = [];
+    var p;
+    var n;
+    var primes = [];
+    for (p = 2; p <= max; ++p) {
+      if (!sieve[p]) {
+        primes.push(p);
+        for (n = p << 1; n <= max; n += p) {
+          sieve[n] = true;
+        }
+      }
+    }
+
+    return primes;
+  }
+
+  //Now to Add the Primes
+  var primes = getPrimes(num);
+  for (var m = 0; m < primes.length; m++) {
+    result += primes[m];
+  }
+
+  return result;
+}
+
+sumPrimes(10);
+
