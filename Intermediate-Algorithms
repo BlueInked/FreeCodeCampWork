@@ -279,5 +279,34 @@ function sumPrimes(num) {
   return result;
 }
 
+
+Smallest Common Multiple:
+
+//noprotect
+function smallestCommons(arr) {
+  function isValidMultiple(n, min, max) {
+    for (var i = min; i < max; i++) {
+      if (n % i !== 0) {
+        return false;
+      }
+    }
+    
+    return true;
+  }
+  
+  var min = Math.min(arr[0], arr[1]);
+  var max = Math.max(arr[0], arr[1]);  
+  var multiple = max;
+  
+  while (!isValidMultiple(multiple, min, max)) {
+    multiple += max;
+  }
+  
+  return multiple;
+}
+
+
+
+
 sumPrimes(10);
 
