@@ -310,3 +310,14 @@ function smallestCommons(arr) {
 
 sumPrimes(10);
 
+
+Finders Keeper:
+
+//doing it wrong and misreading the instructions helped me to do it right
+
+function findElement(arr, func) {
+  var filtered = arr.filter(func);
+  return filterArr[0];
+}
+findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
+
