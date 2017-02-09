@@ -321,3 +321,17 @@ function findElement(arr, func) {
 }
 findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
 
+
+Drop It:
+
+//at first my solution was broken and eneded up being an infinite loop after looking at the hints and reading the docs on shift I wokred it differently.
+
+function dropElements(arr, func) {
+  // Drop them elements.
+  while(arr.length > 0 && !func(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
