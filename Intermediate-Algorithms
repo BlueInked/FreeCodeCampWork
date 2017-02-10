@@ -335,3 +335,17 @@ function dropElements(arr, func) {
 }
 
 dropElements([1, 2, 3], function(n) {return n < 3; });
+
+
+Steamroller:
+
+//after the intermediate solution explantion, after I hit too many walls
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+ let flatten = [].concat(...arr);
+  return flatten.some(Array.isArray) ? steamrollArray(flatten) : flatten;
+}
+
+
+steamrollArray([1, [2], [3, [[4]]]]);
