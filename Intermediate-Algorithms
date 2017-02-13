@@ -374,3 +374,42 @@ function truthCheck(collection, pre) {
 }
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+
+Arguments Optional:
+
+
+function addTogether(a,b) {
+  //funtion to check if the arguments are numbers for reuse
+ var isNum = function(num) {
+    if (typeof num !== 'number') {
+      return undefined;
+    } else
+      return num;
+  };
+  
+  if (arguments.length > 1) {
+    var a = isNum(arguments[0]);
+    var b = isNum(arguments[1]);
+    if (a === undefined || b === undefined) {
+      return undefined;
+    } else {
+      return a + b;
+    }
+  } else {
+  
+    var arg1 = arguments[0];
+
+    if (isNum(arg1)) {
+       return function(arg2) {
+          if (arg1 === undefined || isNum(arg2) === undefined) {
+          return undefined;
+        } else {
+            return arg1 + arg2;
+        }
+      };
+    }
+  }
+}
+
+addTogether(2,3);
