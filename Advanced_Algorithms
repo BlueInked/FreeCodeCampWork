@@ -67,3 +67,18 @@ updateRecords(5439, "tracks", "Take a Chance on Me");
 
 Symmetric Difference:
 
+function sym(args) {
+//makes the arguments into arrays
+  var arr = Array.from(arguments);
+  arr = arr.reduce(function(a, b) {
+  // in a but not in b and viceversa
+    var aNotB = a.filter(function(val) { return !b.includes(val); });
+    var bNotA = b.filter(function(val) { return !a.includes(val); });
+    //makes one array
+    return aNotB.concat(bNotA);
+  });
+  return arr.filter(function(value, index, self) {
+    return self.indexOf(value) === index;
+  });
+}
+
