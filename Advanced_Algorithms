@@ -194,3 +194,25 @@ var newInv = [
 ];
 
 updateInventory(curInv, newInv);
+
+
+No Repeats, Please
+
+function permAlone(str) {
+  var re=/(.)\1/;
+  function permT(p,o){
+    if(o.length){
+      var sum=0;
+      for(var i=0;i<p.length+1;i++){
+        sum+=permT(p.slice(0,i).concat(o[0]).concat(p.slice(i)),o.slice(1));
+      }
+      return sum;
+    }
+    else return !re.test(p.join(''));
+  }
+  return permT([],str.split(''));
+}
+
+permAlone("aab");
+
+
